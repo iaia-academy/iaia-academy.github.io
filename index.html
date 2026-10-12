@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#080e1c" />
+  <meta name="description" content="IAIA Academy is an independent initiative by Mohammad Mohammadi, creator of AI Creation Navigator and ACN Companion. Human-led AI creation, privacy-first software, and thoughtful engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IAIA Academy — Intelligence, with an independent signature." />
+  <meta property="og:description" content="Explore the vision behind AI Creation Navigator and ACN Companion, created by Mohammad Mohammadi." />
+  <title>IAIA Academy — Independent Intelligence. Human Direction.</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080e1c;
+      --bg-deep: #060b16;
+      --panel: #101b2d;
+      --panel-2: #142036;
+      --line: rgba(149, 179, 207, .15);
+      --line-bright: rgba(107, 218, 222, .36);
+      --white: #f6f9ff;
+      --muted: #a5b4c8;
+      --faint: #768ba5;
+      --cyan: #8bdde0;
+      --cyan2: #61b9cb;
+      --gold: #f4c77c;
+      --gold2: #c89b53;
+      --max: 1240px;
+      --radius: 22px;
+      font-family: Inter, 'Segoe UI', Arial, sans-serif;
+      font-synthesis: none;
+      -webkit-font-smoothing: antialiased;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body { margin: 0; color: var(--white); background: var(--bg); overflow-x: hidden; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none; background:
+      radial-gradient(ellipse 45% 37% at 79% 14%, rgba(36,100,124,.19), transparent 90%),
+      radial-gradient(ellipse 28% 26% at 6% 50%, rgba(104,91,162,.09), transparent 93%),
+      linear-gradient(180deg,#080f1f,#080e1c 58%,#070b14); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--cyan); outline-offset: 5px; border-radius: 5px; }
+    ::selection { background: rgba(103,207,215,.34); color: white; }
+    .wrap { max-width: var(--max); margin: auto; width: calc(100% - 96px); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 12px; color: var(--cyan); text-transform: uppercase; letter-spacing: .22em; font-size: 11px; font-weight: 750; }
+    .eyebrow .dash { height: 1px; width: 26px; background: currentColor; opacity: .75; }
+    .accent { color: var(--cyan); }
+    .gold { color: var(--gold); }
+    .muted { color: var(--muted); }
+    .header { position: sticky; top: 0; z-index: 20; background: rgba(8,14,28,.77); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(177,196,215,.09); }
+    .header-inner { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .mark { height: 47px; width: 47px; flex: 0 0 47px; border-radius: 13px; display: grid; place-items: center; border: 1px solid rgba(131,220,223,.38); box-shadow: inset 0 1px 0 rgba(255,255,255,.1),0 0 23px rgba(75,184,195,.1); background: linear-gradient(145deg,#18314a,#0c182b); color: #f8fcff; font-size: 12px; letter-spacing: .035em; font-weight: 850; }
+    .brand-title { display: block; font-weight: 800; letter-spacing: .065em; font-size: 14px; }
+    .brand-sub { display: block; margin-top: 3px; color: var(--faint); letter-spacing: .07em; font-size: 9px; text-transform: uppercase; font-weight: 650; }
+    .nav { display: flex; align-items: center; gap: 33px; color: #b4c4d5; font-size: 12px; font-weight: 550; }
+    .nav a:hover { color: #fff; }
+    .nav-cta { padding: 12px 19px; border: 1px solid rgba(139,221,224,.43); border-radius: 10px; color: #e3fdff !important; background: rgba(84,184,197,.07); white-space: nowrap; transition: background .2s, transform .2s; }
+    .nav-cta:hover { background: rgba(84,184,197,.17); transform: translateY(-1px); }
+    .menu-button { display: none; background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 10px; color: white; min-width: 43px; min-height: 43px; align-items: center; justify-content: center; cursor: pointer; }
+    .menu-button svg { width: 20px; height: 20px; }
+    .hero { position: relative; padding: 96px 0 102px; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; pointer-events: none; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg,transparent,rgba(139,221,224,.22),rgba(244,199,124,.14),transparent); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.05fr) minmax(0, .95fr); gap: 36px; align-items: center; }
+    .intro { position: relative; z-index: 2; }
+    .hero-status { display: inline-flex; align-items: center; padding: 10px 13px; border: 1px solid rgba(133,213,225,.18); background: rgba(17,36,56,.55); border-radius: 30px; font-size: 10px; font-weight: 650; letter-spacing: .1em; color: #b0cbd7; text-transform: uppercase; margin-bottom: 37px; }
+    .status-dot { width: 6px; height: 6px; background: #7edfd0; border-radius: 50%; margin-right: 9px; box-shadow: 0 0 14px #64daca; }
+    h1,h2,h3,p { margin-top: 0; }
+    h1 { font-size: clamp(49px, 5.15vw, 77px); line-height: 1.08; letter-spacing: -.064em; font-weight: 700; margin-bottom: 29px; max-width: 730px; }
+    .hero-highlight { display: inline; background: linear-gradient(100deg,#a5f0ea 5%,#7fd2df 50%,#e5cb9b 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero-lead { color: #b4c2d3; font-size: 16px; line-height: 1.85; max-width: 535px; margin-bottom: 35px; }
+    .actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 22px; border-radius: 11px; font-size: 13px; font-weight: 700; transition: background .2s, transform .2s, border-color .2s; }
+    .btn svg { width: 15px; height: 15px; }
+    .btn-primary { color: #09212d; background: linear-gradient(105deg,#9ce3e0,#c3e9d8); box-shadow: 0 8px 34px rgba(83,192,201,.14); }
+    .btn-primary:hover { background: linear-gradient(105deg,#b2f5ec,#d5f3e8); transform: translateY(-2px); }
+    .btn-subtle { border: 1px solid rgba(162,192,215,.22); background: rgba(255,255,255,.035); color: #d6e3ef; }
+    .btn-subtle:hover { border-color: rgba(162,229,233,.45); transform: translateY(-2px); }
+    .founder-line { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 43px; color: var(--faint); font-size: 11px; }
+    .founder-line strong { color: #dbe6f2; font-weight: 650; }
+    .founder-line .spark { width: 18px; height: 1px; background: rgba(244,199,124,.7); margin-right: 3px; }
+    .founder-line .sep { color: #4f627a; padding: 0 4px; }
+    .visual { position: relative; height: 538px; display: grid; place-items: center; isolation: isolate; }
+    .visual::before { content: ''; position: absolute; width: 92%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle,rgba(49,170,185,.2),rgba(38,99,140,.07) 42%,transparent 67%); filter: blur(8px); z-index: -1; }
+    .orbital { width: min(100%, 520px); aspect-ratio: 1; position: absolute; border-radius: 50%; border: 1px solid rgba(139,210,222,.1); }
+    .orbital::before { content:''; position: absolute; inset: 13%; border-radius: 50%; border: 1px dashed rgba(132,183,202,.16); }
+    .orbital::after { content:''; position: absolute; inset: 27%; border-radius: 50%; border: 1px solid rgba(225,197,138,.12); }
+    .orbital-ring { position: absolute; width: 85%; aspect-ratio: 1; border-radius: 50%; border: 1px solid rgba(110,157,188,.1); transform: rotate(-16deg) scaleX(.71); }
+    .ring-tick { position: absolute; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 21px rgba(244,199,124,.8); top: 54px; right: 89px; }
+    .mesh { position: absolute; width: 88%; aspect-ratio: 1; border-radius: 50%; background-image: linear-gradient(rgba(140,200,214,.048) 1px,transparent 1px),linear-gradient(90deg,rgba(140,200,214,.048) 1px,transparent 1px); background-size: 30px 30px; mask-image: radial-gradient(circle,#000 28%,transparent 71%); }
+    .hero-console { position: relative; width: 83%; max-width: 438px; min-height: 360px; border-radius: 22px; border: 1px solid rgba(132,203,221,.24); background: linear-gradient(147deg,rgba(25,44,66,.96),rgba(11,20,36,.97) 68%); box-shadow: 0 33px 78px rgba(1,6,17,.5),inset 0 1px 0 rgba(225,246,255,.075),0 0 65px rgba(58,162,174,.1); overflow: hidden; transform: perspective(900px) rotateY(-6deg) rotateX(3deg); }
+    .hero-console::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(120deg,rgba(139,227,219,.065),transparent 37%,transparent 80%,rgba(233,187,118,.05)); }
+    .console-top { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 22px 22px 19px; border-bottom: 1px solid rgba(170,205,226,.13); }
+    .console-label { font-size: 10px; font-weight: 750; letter-spacing: .19em; color: #e1eaf1; }
+    .console-dots { display: flex; gap: 6px; }
+    .console-dots span { width: 5px; height: 5px; border-radius: 50%; background: #55728b; }
+    .console-dots span:first-child { background: #e1b76d; }
+    .console-body { position: relative; padding: 25px 24px 28px; }
+    .console-overline { color: #81becd; letter-spacing: .21em; font-size: 9px; font-weight: 750; }
+    .console-main { font-size: 49px; letter-spacing: -.07em; font-weight: 750; margin: 14px 0 4px; line-height: 1; }
+    .console-main em { font-style: normal; font-weight: 350; color: #9bdadd; }
+    .console-caption { color: #a6b9cf; font-size: 11px; line-height: 1.7; }
+    .console-rule { height: 1px; margin: 23px 0 22px; background: linear-gradient(90deg,rgba(115,218,218,.48),rgba(184,172,137,.27),transparent); }
+    .console-list { display: grid; gap: 15px; }
+    .console-row { display: grid; grid-template-columns: 27px 1fr auto; gap: 10px; align-items: center; }
+    .console-icon { height: 27px; width: 27px; border-radius: 8px; display: grid; place-items: center; background: rgba(119,205,208,.11); color: #8cdbdc; }
+    .console-icon svg { width: 13px; height: 13px; stroke-width: 1.8; }
+    .console-row strong { display: block; font-weight: 650; font-size: 11px; }
+    .console-row small { display: block; font-size: 9px; color: #8098b1; padding-top: 3px; }
+    .console-state { color: #95d3c5; font-size: 9px; letter-spacing: .08em; }
+    .float-pill { position: absolute; border: 1px solid rgba(139,210,222,.22); border-radius: 10px; background: rgba(15,31,49,.92); backdrop-filter: blur(12px); box-shadow: 0 14px 35px rgba(2,8,19,.4); padding: 13px 16px; color: #d8e8ee; font-size: 10px; letter-spacing: .06em; }
+    .pill-left { left: 0; bottom: 92px; }
+    .pill-right { right: 0; top: 92px; }
+    .pill-line { display: inline-block; width: 13px; height: 5px; border-radius: 5px; background: #95ded0; margin-right: 8px; box-shadow: 0 0 10px rgba(130,224,212,.45); }
+    .pill-right .pill-line { background: var(--gold); box-shadow: 0 0 10px rgba(240,191,123,.4); }
+    .section { padding: 105px 0; }
+    .section-head { margin-bottom: 42px; }
+    h2 { font-size: clamp(35px,3.7vw,52px); line-height: 1.18; letter-spacing: -.055em; font-weight: 650; margin: 19px 0; }
+    .section-lead { font-size: 15px; line-height: 1.9; color: var(--muted); max-width: 690px; }
+    .products { background: linear-gradient(180deg,rgba(14,23,39,.35),rgba(13,24,42,.66),rgba(8,14,28,.3)); border-bottom: 1px solid rgba(155,198,210,.1); }
+    .product-grid { display: grid; grid-template-columns: 1.13fr .87fr; gap: 22px; }
+    .product-card { position: relative; overflow: hidden; border: 1px solid rgba(149,192,212,.18); border-radius: 23px; background: linear-gradient(140deg,rgba(24,41,64,.88),rgba(12,23,39,.97)); padding: 35px 36px 0; min-height: 450px; }
+    .product-card::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 90% 30%,rgba(93,174,188,.11),transparent 60%); }
+    .product-card.companion::before { background: radial-gradient(ellipse at 81% 35%,rgba(213,155,86,.11),transparent 60%); }
+    .product-index { font-size: 10px; letter-spacing: .21em; text-transform: uppercase; color: #89b8c7; font-weight: 700; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .product-card.companion .product-index { color: #d6b57f; }
+    .dev-status { border: 1px solid rgba(154,185,206,.2); border-radius: 99px; padding: 6px 9px; font-size: 9px; color: #97a9bc; letter-spacing: .07em; }
+    .product-card h3 { position: relative; font-size: clamp(30px,3vw,41px); letter-spacing: -.055em; margin: 31px 0 13px; line-height: 1.14; font-weight: 650; }
+    .product-card p { position: relative; max-width: 385px; color: #a9b9cb; font-size: 13px; line-height: 1.9; }
+    .product-illustration { height: 184px; margin-top: 18px; position: relative; }
+    .product-panel { position: absolute; bottom: -50px; left: 5%; right: 5%; height: 203px; border-radius: 16px; border: 1px solid rgba(146,207,223,.27); background: linear-gradient(150deg,rgba(28,52,76,.98),rgba(11,23,40,.96)); box-shadow: 0 25px 55px rgba(0,0,0,.3); overflow: hidden; transform: perspective(550px) rotateX(7deg); }
+    .panel-top { height: 30px; border-bottom: 1px solid rgba(167,210,226,.13); display: flex; align-items: center; justify-content: space-between; padding: 0 14px; font-size: 8px; letter-spacing: .12em; color: #89aabe; }
+    .panel-top b { color: #bbd8e6; font-weight: 650; }
+    .panel-in { display: flex; gap: 14px; padding: 18px; }
+    .panel-rail { width: 25%; display: grid; gap: 10px; }
+    .rail-line { height: 10px; border-radius: 4px; background: rgba(133,197,217,.12); }
+    .rail-line:nth-child(2) { background: rgba(107,210,209,.29); }
+    .rail-line:nth-child(3) { width: 75%; }
+    .panel-stage { flex: 1; border: 1px solid rgba(130,202,216,.19); background: rgba(10,26,43,.68); border-radius: 9px; padding: 15px; }
+    .stage-chip { width: 63px; height: 5px; background: #dcb879; border-radius: 3px; margin-bottom: 18px; }
+    .stage-title { width: 75%; height: 9px; border-radius: 3px; background: rgba(195,225,237,.35); margin-bottom: 11px; }
+    .stage-line { width: 92%; height: 5px; border-radius: 3px; background: rgba(195,225,237,.11); margin-bottom: 8px; }
+    .stage-line.short { width: 60%; }
+    .companion-screen { left: 14%; right: 14%; }
+    .chat-bubble { width: 70%; min-height: 32px; border-radius: 10px 10px 10px 3px; background: rgba(103,185,198,.17); margin: 15px; padding: 10px; display: grid; align-content: center; gap: 5px; }
+    .chat-bubble b { display: block; width: 80%; height: 5px; border-radius: 3px; background: rgba(172,224,231,.42); }
+    .chat-bubble b:last-child { width: 57%; opacity: .6; }
+    .chat-bubble.answer { margin-left: auto; margin-right: 15px; width: 64%; background: rgba(204,156,91,.13); border-radius: 10px 10px 3px 10px; }
+    .chat-bubble.answer b { background: rgba(243,200,132,.5); }
+    .values { padding-top: 112px; padding-bottom: 112px; }
+    .value-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 19px; }
+    .value-card { border-top: 1px solid rgba(144,195,210,.29); padding: 30px 15px 5px 0; }
+    .value-number { color: var(--gold); font-size: 11px; letter-spacing: .13em; }
+    .value-card h3 { font-size: 21px; letter-spacing: -.035em; margin: 22px 0 12px; font-weight: 650; }
+    .value-card p { color: #a0b2c6; line-height: 1.85; font-size: 13px; margin: 0; max-width: 340px; }
+    .story { border-top: 1px solid rgba(144,195,210,.1); border-bottom: 1px solid rgba(144,195,210,.1); background: linear-gradient(135deg,rgba(12,23,39,.94),rgba(13,20,36,.95)); }
+    .story-grid { display: grid; grid-template-columns: .83fr 1.17fr; gap: 80px; align-items: center; }
+    .signature { position: relative; min-height: 350px; border: 1px solid rgba(154,205,220,.16); border-radius: 22px; background: linear-gradient(140deg,rgba(28,49,70,.62),rgba(13,25,42,.9)); padding: 30px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+    .signature::after { content: 'IAIA'; position: absolute; right: -17px; bottom: -54px; font-size: 195px; line-height: 1; letter-spacing: -.09em; font-weight: 850; color: rgba(128,189,206,.057); pointer-events: none; }
+    .sig-top { color: var(--gold); font-size: 10px; letter-spacing: .22em; font-weight: 750; text-transform: uppercase; }
+    .signature .vision-line { display: block; font-size: 31px; line-height: 1.38; letter-spacing: -.04em; font-weight: 480; color: #e7f0f8;; position: relative; z-index:1; }
+    .sig-person { position: relative; z-index: 1; padding-top: 20px; border-top: 1px solid rgba(141,189,209,.19); display: grid; gap: 6px; }
+    .sig-person strong { font-size: 14px; font-weight: 650; }
+    .sig-person span { font-size: 11px; color: #8da7bb; }
+    .story-copy .section-lead { max-width: 580px; }
+    .story-copy .story-note { margin-top: 28px; display: flex; align-items: flex-start; gap: 14px; color: #a5b8c7; line-height: 1.8; font-size: 12px; }
+    .story-note .mini-rule { height: 20px; flex: 0 0 2px; background: var(--gold); margin-top: 2px; }
+    .future { padding-bottom: 110px; }
+    .future-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; margin-top: 35px; }
+    .future-item { border: 1px solid rgba(145,191,205,.16); border-radius: 13px; background: rgba(26,43,63,.42); padding: 20px 14px; min-height: 114px; }
+    .future-item svg { width: 20px; height: 20px; stroke: var(--cyan); stroke-width: 1.6; fill: none; margin-bottom: 13px; }
+    .future-item span { color: #c2d1dc; font-size: 11px; line-height: 1.5; display: block; }
+    .future-label { text-transform: uppercase; font-size: 10px; letter-spacing: .11em; color: var(--gold); margin: 25px 0 0; }
+    .launch { padding-bottom: 115px; }
+    .launch-panel { position: relative; overflow: hidden; padding: 59px 65px; border: 1px solid rgba(156,218,219,.24); border-radius: 22px; background: radial-gradient(ellipse at 100% 0,rgba(104,183,181,.18),transparent 50%),linear-gradient(135deg,rgba(28,51,70,.96),rgba(12,23,42,.98)); }
+    .launch-panel::after { content:''; position:absolute; height: 310px; width: 310px; right: -100px; bottom: -190px; border-radius: 50%; border: 1px solid rgba(227,188,123,.15); box-shadow: 0 0 0 45px rgba(130,194,210,.025),0 0 0 95px rgba(130,194,210,.025); pointer-events:none; }
+    .launch-panel h2 { margin: 16px 0 16px; position: relative; z-index:1; }
+    .launch-panel p { color: #adbdcd; max-width: 590px; font-size: 14px; line-height: 1.8; position: relative; z-index:1; }
+    .launch-panel .actions { margin-top: 26px; position: relative; z-index:1; }
+    .foot { border-top: 1px solid rgba(154,187,212,.12); padding: 33px 0 39px; }
+    .foot-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .foot p { color: #8397af; font-size: 11px; line-height: 1.9; margin: 0; }
+    .foot b { color: #c5d7e1; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; font-size: 11px; color: #98a9ba; }
+    .footer-links a:hover { color: white; }
+    .sr-only { position: absolute; width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0; }
+    @media (max-width: 1080px) {
+      .wrap { width: calc(100% - 64px); }
+      .hero-grid { gap: 8px; }
+      h1 { font-size: clamp(47px,5.8vw,69px); }
+      .visual { height: 490px; }
+      .orbital { width: 98%; }
+      .hero-console { width: 87%; }
+      .pill-left { left: -10px; }
+      .pill-right { right: -11px; }
+      .future-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 790px) {
+      .wrap { width: calc(100% - 44px); }
+      .header-inner { height: 73px; }
+      .nav { display: none; position: absolute; left: 22px; right: 22px; top: 80px; padding: 20px; border: 1px solid rgba(139,210,222,.25); border-radius: 15px; background: #101d31; flex-direction: column; align-items: stretch; gap: 0; box-shadow: 0 20px 44px rgba(0,0,0,.35); }
+      .nav.is-open { display: flex; }
+      .nav a { display: block; padding: 13px 9px; }
+      .nav-cta { margin-top: 10px; text-align: center; }
+      .menu-button { display: inline-flex; }
+      .hero { padding: 76px 0 66px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .intro { max-width: 620px; }
+      .visual { margin-top: 30px; height: 500px; }
+      .hero-console { width: min(82%,440px); }
+      .orbital { width: min(95%,520px); }
+      .pill-left { left: 6%; }
+      .pill-right { right: 4%; }
+      .product-grid,.story-grid { grid-template-columns: 1fr; }
+      .story-grid { gap: 40px; }
+      .product-card { min-height: 450px; }
+      .story-copy { order: -1; }
+      .value-grid { grid-template-columns: 1fr; gap: 20px; }
+      .value-card { padding-top: 24px; }
+      .future-grid { grid-template-columns: repeat(2,1fr); }
+      .section { padding: 85px 0; }
+      .launch-panel { padding: 39px 35px; }
+      .foot-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 470px) {
+      .wrap { width: calc(100% - 34px); }
+      .brand-title { font-size: 12px; }
+      .brand-sub { font-size: 8px; letter-spacing: .045em; }
+      .mark { width: 42px; height: 42px; flex-basis: 42px; }
+      .hero { padding-top: 59px; }
+      .hero-status { margin-bottom: 26px; font-size: 8px; }
+      h1 { font-size: clamp(46px, 12vw, 57px); }
+      .hero-lead { font-size: 14px; }
+      .btn { padding: 14px 18px; font-size: 12px; }
+      .founder-line { margin-top: 35px; }
+      .visual { height: 380px; margin-top: 24px; }
+      .hero-console { width: 87%; min-height: 0; transform: none; }
+      .console-top { padding: 16px; }
+      .console-body { padding: 20px 18px 23px; }
+      .console-main { font-size: 39px; }
+      .console-rule { margin: 17px 0 16px; }
+      .console-list { gap: 12px; }
+      .float-pill { font-size: 8px; padding: 9px 10px; }
+      .pill-left { left: -5px; bottom: 24px; }
+      .pill-right { right: -5px; top: 9px; }
+      .product-card { padding: 27px 24px 0; min-height: 425px; }
+      .product-card h3 { font-size: 34px; }
+      .product-illustration { height: 162px; }
+      .signature { min-height: 350px; padding: 23px; }
+      .signature q { font-size: 29px; }
+      .future-grid { gap: 10px; }
+      .future-item { padding: 17px 12px; min-height: 107px; }
+      .launch-panel { padding: 32px 24px; }
+      .section { padding: 76px 0; }
+      .footer-links { gap: 15px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#home" aria-label="IAIA Academy — home">
+        <span class="mark" aria-hidden="true">IAIA</span>
+        <span><span class="brand-title">IAIA ACADEMY</span><span class="brand-sub">Industrial Artificial Intelligence</span></span>
+      </a>
+      <nav class="nav" id="site-navigation" aria-label="Main navigation">
+        <a href="#vision">Vision</a>
+        <a href="#products">Our products</a>
+        <a href="#principles">Principles</a>
+        <a href="#founder">The creator</a>
+        <a class="nav-cta" href="#journey">Explore our direction <span aria-hidden="true">↗</span></a>
+      </nav>
+      <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu">
+        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" id="vision" aria-labelledby="hero-heading">
+      <div class="wrap hero-grid">
+        <div class="intro">
+          <div class="hero-status"><span class="status-dot"></span>Independent by vision · Human-led by design</div>
+          <div class="eyebrow"><span class="dash"></span> Industrial Artificial Intelligence Academy</div>
+          <h1 id="hero-heading">Intelligence with an <span class="hero-highlight">independent signature.</span></h1>
+          <p class="hero-lead">We create thoughtful AI software that keeps people at the center. From the first idea to the final decision, technology should expand human capability — not replace human direction.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#products">Discover our products <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+            <a class="btn btn-subtle" href="#founder">Meet the creator <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7"/></svg></a>
+          </div>
+          <div class="founder-line"><span class="spark"></span><span>Created by <strong>Mohammad Mohammadi</strong></span><span class="sep">·</span><span>An IAIA Academy initiative</span></div>
+        </div>
+        <div class="visual" aria-label="Abstract depiction of IAIA Academy's product ecosystem">
+          <div class="mesh" aria-hidden="true"></div><div class="orbital" aria-hidden="true"></div><div class="orbital-ring" aria-hidden="true"></div><span class="ring-tick" aria-hidden="true"></span>
+          <div class="hero-console">
+            <div class="console-top"><span class="console-label">IAIA / PRODUCT ECOSYSTEM</span><div class="console-dots" aria-hidden="true"><span></span><span></span><span></span></div></div>
+            <div class="console-body">
+              <div class="console-overline">CREATIVE INTELLIGENCE / 001</div>
+              <div class="console-main">ACN<span class="accent">.</span><em>01</em></div>
+              <div class="console-caption">AI Creation Navigator<br/>An independent platform for thoughtful creation.</div>
+              <div class="console-rule"></div>
+              <div class="console-list">
+                <div class="console-row"><span class="console-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><strong>AI Creation Navigator</strong><small>Structured creative workspace</small></div><span class="console-state">BUILDING</span></div>
+                <div class="console-row"><span class="console-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 5h16v12H7l-3 3V5Z"/><path d="M8 10h8M8 13h5"/></svg></span><div><strong>ACN Companion</strong><small>Context-aware assistance</small></div><span class="console-state">EVOLVING</span></div>
+                <div class="console-row"><span class="console-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m12 2 9 4v6c0 5-3.5 8.5-9 10-5.5-1.5-9-5-9-10V6l9-4Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><strong>Human oversight</strong><small>Approval, verification, control</small></div><span class="console-state">CORE</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="float-pill pill-left"><span class="pill-line"></span>LOCAL-FIRST THINKING</div>
+          <div class="float-pill pill-right"><span class="pill-line"></span>CREATOR-LED INNOVATION</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products" aria-labelledby="product-heading">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow"><span class="dash"></span> The ecosystem</div><h2 id="product-heading">One vision.<br/><span class="accent">Intelligent products.</span></h2><p class="section-lead">A growing family of tools designed to bring clarity, continuity, and agency to working with artificial intelligence.</p></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-index"><span>01 / Flagship platform</span><span class="dev-status">In development</span></div>
+            <h3>AI Creation<br/>Navigator<span class="gold">.</span></h3>
+            <p>A structured environment for developing ideas and managing AI-assisted work — with local-first principles and deliberate human control.</p>
+            <div class="product-illustration" aria-hidden="true"><div class="product-panel"><div class="panel-top"><b>ACN / WORKSPACE</b><span>PROJECT OVERVIEW · 01</span></div><div class="panel-in"><div class="panel-rail"><div class="rail-line"></div><div class="rail-line"></div><div class="rail-line"></div><div class="rail-line"></div></div><div class="panel-stage"><div class="stage-chip"></div><div class="stage-title"></div><div class="stage-line"></div><div class="stage-line short"></div><div class="stage-line"></div></div></div></div></div>
+          </article>
+          <article class="product-card companion">
+            <div class="product-index"><span>02 / Integrated assistant</span><span class="dev-status">In development</span></div>
+            <h3>ACN<br/>Companion<span class="gold">.</span></h3>
+            <p>A persistent assistant designed to work alongside users — helping them explore, plan, and eventually engage with richer multimodal workflows.</p>
+            <div class="product-illustration" aria-hidden="true"><div class="product-panel companion-screen"><div class="panel-top"><b>COMPANION / CONVERSATION</b><span>●</span></div><div class="chat-bubble"><b></b><b></b></div><div class="chat-bubble answer"><b></b><b></b></div></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section values" id="principles" aria-labelledby="principles-heading">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow"><span class="dash"></span> What we believe</div><h2 id="principles-heading">Built on principles.<br/><span class="accent">Not just possibilities.</span></h2><p class="section-lead">A few commitments guide every design decision, every workflow, and every new capability.</p></div>
+        <div class="value-grid">
+          <article class="value-card"><span class="value-number">PRINCIPLE / 01</span><h3>Human agency first.</h3><p>AI should make people more capable. Important decisions, permissions, and final approvals belong to the human using the product.</p></article>
+          <article class="value-card"><span class="value-number">PRINCIPLE / 02</span><h3>Private by intention.</h3><p>Local-first design and explicit user choice guide how workspace data is handled. External AI use should remain transparent and controlled.</p></article>
+          <article class="value-card"><span class="value-number">PRINCIPLE / 03</span><h3>Progress you can verify.</h3><p>Software evolution should be traceable: build, test, verify, and lock — with no silent changes to trusted baselines.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="founder" aria-labelledby="founder-heading">
+      <div class="wrap story-grid">
+        <div class="signature"><span class="sig-top">A creator-led perspective</span><p class="vision-line">Technology is powerful. Human vision gives it purpose.</p><div class="sig-person"><strong>Mohammad Mohammadi</strong><span>Creator of AI Creation Navigator · IAIA Academy</span></div></div>
+        <div class="story-copy"><div class="eyebrow"><span class="dash"></span> The identity behind the work</div><h2 id="founder-heading">Independent thinking.<br/><span class="gold">A name behind every idea.</span></h2><p class="section-lead">IAIA Academy is a creator-led initiative by Mohammad Mohammadi. Its products reflect a simple belief: meaningful technology deserves a clear identity, a responsible development process, and a purpose beyond the technology itself.</p><div class="story-note"><span class="mini-rule"></span><span>AI providers may power specific capabilities. The product vision, design direction, and creator identity remain distinctly IAIA.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section future" id="journey" aria-labelledby="journey-heading">
+      <div class="wrap">
+        <div class="eyebrow"><span class="dash"></span> Looking forward</div><h2 id="journey-heading">The next chapter is <span class="accent">multimodal.</span></h2><p class="section-lead">The following capabilities form part of the ACN Companion development direction. They are not claims of features already released.</p>
+        <div class="future-grid">
+          <div class="future-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8l-5-5H8Z"/><path d="M14 3v6h7M7 13h10M7 17h7"/></svg><span>Document understanding</span></div>
+          <div class="future-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8" cy="9" r="1.2"/><path d="m3 17 5-4 4 3 4-6 5 7"/></svg><span>Image &amp; screenshot analysis</span></div>
+          <div class="future-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="13" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4m-4 0h8"/></svg><span>Speech-to-text</span></div>
+          <div class="future-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9v6h4l5 4V5L7 9H3ZM16 9c2 2 2 4 0 6m3-9c4 4 4 8 0 12"/></svg><span>Text-to-speech</span></div>
+          <div class="future-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9M3 4v8h8M9 9c1-2 5-2 6 0s-1 3-3 4v2m0 3h.01"/></svg><span>Live voice conversation</span></div>
+        </div>
+        <p class="future-label">Roadmap direction · In exploration and development</p>
+      </div>
+    </section>
+
+    <section class="launch" aria-labelledby="closing-heading">
+      <div class="wrap"><div class="launch-panel"><div class="eyebrow"><span class="dash"></span> IAIA Academy</div><h2 id="closing-heading">The future of AI should<br/><span class="hero-highlight">have a human signature.</span></h2><p>We are building AI software with a distinct identity and a clear purpose. Discover the products and the principles that shape them.</p><div class="actions"><a class="btn btn-primary" href="#products">View the ecosystem <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="btn btn-subtle" href="#founder">Our story</a></div></div></div>
+    </section>
+  </main>
+
+  <footer class="foot"><div class="wrap foot-inner"><p><b>IAIA Academy</b> · Industrial Artificial Intelligence Academy<br/>Created by Mohammad Mohammadi · © <span id="year">2026</span> IAIA Academy.</p><nav class="footer-links" aria-label="Footer navigation"><a href="#vision">Vision</a><a href="#products">Products</a><a href="#principles">Principles</a><a href="#founder">Creator</a></nav></div></footer>
+
+  <script>
+    (() => {
+      'use strict';
+      const year = document.getElementById('year');
+      if (year) year.textContent = new Date().getFullYear().toString();
+      const button = document.getElementById('menu-button');
+      const nav = document.getElementById('site-navigation');
+      if (!button || !nav) return;
+      const closeMenu = () => { nav.classList.remove('is-open'); button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-label','Open navigation menu'); };
+      button.addEventListener('click', () => {
+        const open = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', String(open));
+        button.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      nav.addEventListener('click', (event) => { if (event.target.closest('a')) closeMenu(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+      document.addEventListener('click', (event) => { if (!nav.contains(event.target) && !button.contains(event.target)) closeMenu(); });
+    })();
+  </script>
+</body>
+</html>

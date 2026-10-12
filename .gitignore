@@ -1,0 +1,16 @@
+# Public website repository: never stage secrets or diagnostics
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*secret*
+*credential*
+node_modules/
+.DS_Store
+Thumbs.db
+__pycache__/
+*.log
+*.zip
+preview_*.png
+cover_*.png
